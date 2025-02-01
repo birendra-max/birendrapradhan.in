@@ -7,7 +7,6 @@ export default function App(){
     <>
       <Topbar/>
       <Menu/>
-      <h1>I am vicky</h1>
     </>
   );
 }
