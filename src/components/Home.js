@@ -201,6 +201,52 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      <section id="about" className="z-50 text-black">
+        <div className="bg-white rounded-lg shadow-lg md:p-8 p-2 max-w-7xl mx-auto mt-12 transform transition-all duration-300 hover:scale-105">
+          <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+            {/* About Me Image */}
+            <div className="w-full md:w-1/3">
+              <img
+                src="https://images.unsplash.com/photo-1607798748738-b15c40d33d57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8Y29kZXxlbnwwfDB8fHwxNzMyNzk1MjA5fDA&ixlib=rb-4.0.3&q=80&w=1080" // Replace with your image URL
+                alt="About Me"
+                className="w-full h-full rounded-full object-cover shadow-lg border-4 border-indigo-600"
+              />
+            </div>
+
+            {/* About Me Text */}
+            <div className="w-full md:w-2/3">
+              <h2 className="text-3xl font-semibold mb-4">
+                <span className="border-b-4 border-yellow-700">About Me</span>
+              </h2>
+              <p className="text-lg leading-relaxed mb-6">
+                Hello! I'm a passionate web developer with a strong focus on
+                creating responsive, interactive, and high-performance web
+                applications. I specialize in full-stack development, with a
+                deep understanding of both frontend and backend technologies. I
+                strive to build applications that are not only functional but
+                also user-friendly, and aesthetically pleasing.
+              </p>
+              <p className="text-lg leading-relaxed">
+                I have a keen interest in new technologies and love to
+                experiment with innovative tools and frameworks. When I'm not
+                coding, I enjoy learning new things, collaborating with talented
+                teams, and solving complex problems.
+              </p>
+              <Link to="/About">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 text-white font-semibold rounded-sm bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 transition-all duration-300 shadow-xl transform cursor-pointer mt-8"
+                >
+                  Explore Me
+                </motion.button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </>
   );
 }
