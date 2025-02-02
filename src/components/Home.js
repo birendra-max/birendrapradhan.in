@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <section id="hero">
-        <div className="w-full relative py-10 md:px-8 shadow-xl">
+        <div className="w-full relative py-10 md:px-8 shadow-xl md:h-[75vh]">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -17,12 +17,12 @@ export default function Home() {
             }}
           />
           {/* Content */}
-          <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 sm:px-12 md:px-16 text-center sm:text-left py-10 md:bg-gray-900/50  bg-gray-900/50">
+          <div className="relative z-10 flex flex-col justify-center items-center h-full md:h-[80%] px-6 sm:px-12 md:px-16 text-center sm:text-left py-10 md:bg-gray-900/50  bg-gray-900/50">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className=" w-full"
+              className="w-full"
             >
               {/* Introduction */}
               <h4 className="text-lg sm:text-xl font-medium text-gray-300 bg-blue-900/50 px-4 py-2 rounded-lg inline-block">
@@ -93,6 +93,114 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        id="services"
+        className="z-50 md:-mt-28 md:py-12 py-12 text-white"
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Service 1 */}
+            <div className="bg-gradient-to-r from-blue-400 to-purple-600 p-4 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-40"></div>
+              <div className="relative z-10">
+                <div className="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-14 h-14 mb-3 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  FullStack Web Development
+                </h3>
+                <p className="text-base leading-relaxed">
+                  I provide full-stack web development services, creating modern
+                  and scalable web applications with seamless user experiences.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="bg-gradient-to-r from-indigo-400 to-purple-700 p-4 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-40"></div>
+              <div className="relative z-10">
+                <div className="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-14 h-14 mb-3 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  Frontend Development
+                </h3>
+                <p className="text-base leading-relaxed">
+                  Specialized in building responsive and dynamic user interfaces
+                  using React, Tailwind CSS, and modern frontend frameworks.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="bg-gradient-to-r from-purple-500 to-blue-700 p-4 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-40"></div>
+              <div className="relative z-10">
+                <div className="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-14 h-14 mb-3 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 3v12h14V3H5z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  Backend Development
+                </h3>
+                <p className="text-base leading-relaxed">
+                  Expertise in backend technologies like PHP, MySQL, and
+                  CodeIgniter to build robust and secure server-side solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
     </>
   );
 }

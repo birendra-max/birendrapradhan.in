@@ -14,7 +14,7 @@ function Menu() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <div className="w-full bg-gray-900 md:py-2 py-2 md:px-0 px-8 shadow-lg">
+        <div className="w-full bg-gray-900 md:py-2 py-2 md:px-0 px-8 shadow-lg sticky top-0 z-50">
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 {/* Left Section: Logo */}
                 <div className="flex items-center">
