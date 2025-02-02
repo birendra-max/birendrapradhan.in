@@ -18,7 +18,7 @@ function Menu() {
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 {/* Left Section: Logo */}
                 <div className="flex items-center">
-                    <img src={logo} alt="Logo" className="md:w-18 md:h-18 w-12 h-12 rounded-full shadow-xl bg-white" />
+                    <img src={logo} alt="Logo" className="md:w-18 md:h-18 w-12 h-12 rounded-full border-4 border-indigo-600 shadow-lg" />
                 </div>
 
                 {/* Middle Section: Navigation Links */}
@@ -27,13 +27,13 @@ function Menu() {
                         Home
                     </Link>
                     <Link to="/about" className={`text-md font-semibold ${location.pathname === "/about" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
-                        About
+                        Explore Me
                     </Link>
                     <Link to="/services" className={`text-md font-semibold ${location.pathname === "/services" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
-                        Services
+                        Get Our Services
                     </Link>
                     <Link to="/blog" className={`text-md font-semibold ${location.pathname === "/blog" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
-                        Blog
+                        Blogs
                     </Link>
                 </div>
 
