@@ -4,6 +4,36 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+    const counters = document.querySelectorAll('[data-count]');
+
+    function countUp(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        let current = 0;
+        const increment = target / 100;
+        const interval = setInterval(function() {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target.toLocaleString() + "+";
+                clearInterval(interval);
+            } else {
+                element.textContent = Math.floor(current).toLocaleString() + "+";
+            }
+        }, 30);
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                countUp(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+  
   return (
     <>
       <section id="hero">
@@ -246,7 +276,72 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
+      <section className="py-12 mt-12 rounded-lg shadow-lg hover:scale-100 transform transition-all duration-300 md:px-12 px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-extrabold text-gray-800">Project Achievements</h2>
+            <p className="mt-2 text-lg text-gray-600">Delivering excellence with every project.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {/* <!-- Projects Completed --> */}
+            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
+              <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <dt className="text-xl font-semibold text-gray-900">Projects Completed</dt>
+              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="150">0</dd>
+            </div>
+
+            {/* <!-- SEO Optimization in Projects --> */}
+            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
+              <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6L12 18L21 6" />
+                </svg>
+              </div>
+              <dt className="text-xl font-semibold text-gray-900">SEO-Optimized Projects</dt>
+              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="120">0</dd>
+            </div>
+
+            {/* <!-- Client Reviews --> */}
+            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
+              <div className="w-16 h-16 rounded-full bg-yellow-500 text-white flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </div>
+              <dt className="text-xl font-semibold text-gray-900">Client Reviews</dt>
+              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="85">0</dd>
+            </div>
+
+            {/* <!-- Designs Completed --> */}
+            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
+              <div className="w-16 h-16 rounded-full bg-red-500 text-white flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h18M3 12h18M3 21h18" />
+                </svg>
+              </div>
+              <dt className="text-xl font-semibold text-gray-900">Designs Completed</dt>
+              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="200">0</dd>
+            </div>
+          </div>
+
+          {/* <!-- Call to Action --> */}
+          <div className="mt-12 text-center">
+            <Link to="/contactus" className="inline-block px-8 py-4 bg-indigo-600 text-white text-lg font-medium rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300">
+            Let's Build Something Amazing Together!
+            </Link>
+          </div>
+
+          {
+            
+          }
+
+        </section>
+
     </>
   );
 }
