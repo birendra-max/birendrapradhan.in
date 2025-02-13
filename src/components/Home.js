@@ -2,6 +2,7 @@ import React from "react";
 import { ReactTyped } from "react-typed"; // Correct import
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Review from './Review';
 
 export default function Home() {
     const counters = document.querySelectorAll('[data-count]');
@@ -277,70 +278,195 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 mt-12 rounded-lg shadow-lg hover:scale-100 transform transition-all duration-300 md:px-12 px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-extrabold text-gray-800">Project Achievements</h2>
-            <p className="mt-2 text-lg text-gray-600">Delivering excellence with every project.</p>
+      <section className=" h-full m-auto my-24">
+        <div className="max-w-7xl m-auto md:px-0 px-2 md:my-10 bg-[#111111] dark:bg-white rounded-xl overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl">
+          <section className="w-full h-full flex flex-col justify-center md:py-20 py-10 md:px-20">
+            <div className="w-fit">
+              <h2 className="text-2xl font-bold text-white dark:text-black pb-2">What I Do</h2>
+              <div className="rounded-t-full border-[1px] border-gray-500 dark:border-gray-400 overflow-hidden">
+                <hr className="border-[3px] border-green-400 dark:border-green-600 w-[20%]" />
+              </div>
+            </div>
+
+            <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-4 mt-8">
+              {/* Web Development */}
+              <Link to="/" className="flex sm:gap-4 gap-1 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white">
+                <span>
+                  <i className="fa fa-code text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
+                </span>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-semibold text-white dark:text-black">Web Development</h3>
+                  <p className="text-gray-400 dark:text-gray-700">
+                    Crafting responsive and intuitive websites tailored to your unique needs using cutting-edge technologies.
+                  </p>
+                </div>
+              </Link>
+
+              {/* UI/UX Design */}
+              <Link to="/" className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white">
+                <span>
+                  <i className="fa fa-laptop-code text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
+                </span>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-semibold text-white dark:text-black">UI/UX Design</h3>
+                  <p className="text-gray-400 dark:text-gray-700">
+                    Creating visually appealing and user-centric designs that enhance user experiences and engagement.
+                  </p>
+                </div>
+              </Link>
+
+              {/* SEO Solutions */}
+              <Link to="/" className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white">
+                <span>
+                  <i className="fa fa-search text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
+                </span>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-semibold text-white dark:text-black">SEO Solutions</h3>
+                  <p className="text-gray-400 dark:text-gray-700">
+                    Optimizing websites for search engines to enhance visibility and drive organic traffic.
+                  </p>
+                </div>
+              </Link>
+
+              {/* WordPress Site Development */}
+              <Link to="/" className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white">
+                <span>
+                  <i className="fab fa-wordpress text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
+                </span>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-semibold text-white dark:text-black">WordPress Site Development</h3>
+                  <p className="text-gray-400 dark:text-gray-700">
+                    Designing and developing responsive WordPress websites, from themes to custom plugins.
+                  </p>
+                </div>
+              </Link>
+
+              {/* E-commerce Development */}
+              <Link to="/" className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white">
+                <span>
+                  <i className="fa fa-shopping-bag text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
+                </span>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-semibold text-white dark:text-black">E-commerce Development</h3>
+                  <p className="text-gray-400 dark:text-gray-700">
+                    Creating robust platforms to elevate your online business presence.
+                  </p>
+                </div>
+              </Link>
+
+              {/* API Integration */}
+              <Link to="/" className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white">
+                <span>
+                  <i className="fa fa-plug text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
+                </span>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-semibold text-white dark:text-black">API Integration</h3>
+                  <p className="text-gray-400 dark:text-gray-700">
+                    Seamlessly connecting systems to enhance functionality and performance.
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div className="w-full md:h-screen flex flex-col md:flex-row py-24 dark:bg-gray-800">
+         {/* <!-- Our Working Style Section --> */}
+         <div className="relative w-full mb-10 md:w-auto md:mt-[300px]">
+              <div className="text-center text-white p-2">
+                  <h2 className="text-4xl font-semibold text-emerald-400">Our Working Style</h2>
+                  <p className="text-md mt-4">
+                      We believe in collaboration and open communication to ensure success. Our agile approach helps us to adapt quickly to clients' needs and deliver high-quality results on time.
+                  </p>
+              </div>
+          </div>
+          {/* <!-- Feature 1: Highlight Your Expertise and Services --> */}
+          <div className="relative w-full ml-auto mt-6 md:!mt-0 md:-mr-[68px] md:w-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" className="relative z-10 rotate-90 mx-auto w-4/5 md:w-[300px] md:h-[300px]" id="Layer_1" viewBox="0 0 512 512">
+                  <path d="m485.291 129.408-224-128a10.645 10.645 0 0 0-10.581 0l-224 128a10.665 10.665 0 0 0-5.376 9.259v234.667c0 3.819 2.048 7.36 5.376 9.259l224 128c1.643.939 3.456 1.408 5.291 1.408s3.648-.469 5.291-1.408l224-128a10.665 10.665 0 0 0 5.376-9.259V138.667a10.668 10.668 0 0 0-5.377-9.259z" fill="url(&quot;#SvgjsLinearGradient1060&quot;)"></path>
+                  <defs><linearGradient id="SvgjsLinearGradient1060"><stop stopColor="#059669" offset="0"></stop><stop stopColor="#059669" offset="1"></stop></linearGradient></defs>
+              </svg>
+              <div className="absolute max-w-[60%] left-[19%] md:left-[13%] md:max-w-[75%] z-20 top-0 text-center text-white max-h-[300px] pt-3 md:!pt-12 overflow-hidden">
+                  <h1 className="text-2xl mt-16 md:text-xl font-semibold text-emerald-400 dark:text-white md:my-2">
+                      Our <span className="text-emerald-200"> Expertise</span> in Business Growth
+                  </h1>
+                  <p className="w-full md:text-sm text-md my-3 md:mt-6 line-clamp-3 md:line-clamp-none overflow-hidden">
+                      View some of our recent work that showcases our expertise and creativity. We have helped businesses scale their operations through impactful design and development.
+                  </p>
+                    
+              </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {/* <!-- Projects Completed --> */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-              <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
+          {/* <!-- Feature 2: Showcase Your Work --> */}
+          <div className="relative w-full mt-6 md:w-auto md:mt-[141px] md:-mr-[21px]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="relative z-10 rotate-90 mx-auto w-4/5 md:w-[300px] md:h-[300px]" id="Layer_1" viewBox="0 0 512 512">
+                  <path d="m485.291 129.408-224-128a10.645 10.645 0 0 0-10.581 0l-224 128a10.665 10.665 0 0 0-5.376 9.259v234.667c0 3.819 2.048 7.36 5.376 9.259l224 128c1.643.939 3.456 1.408 5.291 1.408s3.648-.469 5.291-1.408l224-128a10.665 10.665 0 0 0 5.376-9.259V138.667a10.668 10.668 0 0 0-5.377-9.259z" fill="url(&quot;#SvgjsLinearGradient1060&quot;)"></path>
+                  <defs><linearGradient id="SvgjsLinearGradient1060"><stop stopColor="#059669" offset="0"></stop><stop stopColor="#059669" offset="1"></stop></linearGradient></defs>
+              </svg>
+              <div className="absolute max-w-[60%] left-[19%] md:left-[13%] md:max-w-[75%] z-20 top-0 text-center text-white max-h-[300px] pt-3 md:!pt-12 overflow-hidden">
+                  <h1 className="text-2xl mt-16 md:text-xl font-semibold text-emerald-400 dark:text-white md:my-2">
+                      Our Latest <span className="text-emerald-200"> Projects</span>
+                  </h1>
+                  <p className="w-full md:text-sm text-md my-3 md:mt-6 line-clamp-3 md:line-clamp-none overflow-hidden">
+                      View some of our recent work that showcases our expertise and creativity. We have helped businesses scale their operations through impactful design and development.
+                  </p>
               </div>
-              <dt className="text-xl font-semibold text-gray-900">Projects Completed</dt>
-              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="150">0</dd>
-            </div>
-
-            {/* <!-- SEO Optimization in Projects --> */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-              <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6L12 18L21 6" />
-                </svg>
-              </div>
-              <dt className="text-xl font-semibold text-gray-900">SEO-Optimized Projects</dt>
-              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="120">0</dd>
-            </div>
-
-            {/* <!-- Client Reviews --> */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-              <div className="w-16 h-16 rounded-full bg-yellow-500 text-white flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6h18M3 12h18M3 18h18" />
-                </svg>
-              </div>
-              <dt className="text-xl font-semibold text-gray-900">Client Reviews</dt>
-              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="85">0</dd>
-            </div>
-
-            {/* <!-- Designs Completed --> */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-              <div className="w-16 h-16 rounded-full bg-red-500 text-white flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h18M3 12h18M3 21h18" />
-                </svg>
-              </div>
-              <dt className="text-xl font-semibold text-gray-900">Designs Completed</dt>
-              <dd className="mt-2 text-5xl font-bold text-gray-900" data-count="200">0</dd>
-            </div>
           </div>
 
-          {/* <!-- Call to Action --> */}
-          <div className="mt-12 text-center">
-            <Link to="/contactus" className="inline-block px-8 py-4 bg-indigo-600 text-white text-lg font-medium rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300">
-            Let's Build Something Amazing Together!
-            </Link>
+          {/* <!-- Feature 3: Testimonials and Reviews --> */}
+          <div className="relative w-full mt-6 md:w-auto md:!mt-0 md:!w-auto md:-ml-[48px]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="relative z-10 rotate-90 mx-auto w-4/5 md:w-[300px] md:h-[300px]" id="Layer_1" viewBox="0 0 512 512">
+                  <path d="m485.291 129.408-224-128a10.645 10.645 0 0 0-10.581 0l-224 128a10.665 10.665 0 0 0-5.376 9.259v234.667c0 3.819 2.048 7.36 5.376 9.259l224 128c1.643.939 3.456 1.408 5.291 1.408s3.648-.469 5.291-1.408l224-128a10.665 10.665 0 0 0 5.376-9.259V138.667a10.668 10.668 0 0 0-5.377-9.259z" fill="url(&quot;#SvgjsLinearGradient1060&quot;)"></path>
+                  <defs><linearGradient id="SvgjsLinearGradient1060"><stop stopColor="#059669" offset="0"></stop><stop stopColor="#059669" offset="1"></stop></linearGradient></defs>
+              </svg>
+              <div className="absolute max-w-[60%] left-[19%] md:left-[13%] md:max-w-[75%] z-20 top-0 text-center text-white max-h-[300px] pt-3 md:!pt-12 overflow-hidden">
+                  <h1 className="text-2xl mt-16 md:text-xl font-semibold text-emerald-400 dark:text-white md:my-2">
+                      Client <span className="text-emerald-200"> Testimonials</span>
+                  </h1>
+                  <p className="w-full md:text-sm text-md my-3 md:mt-6 line-clamp-3 md:line-clamp-none overflow-hidden">
+                      "Working with this team was a game changer for our business. They truly understand our needs and deliver results that exceed expectations."
+                  </p>
+              </div>
           </div>
 
-          {
-            
-          }
+          {/* <!-- Feature 4: Value Proposition and CTA --> */}
+          <div className="relative w-full mt-6 md:w-auto md:mt-[283px] md:-ml-[302px]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="relative z-10 rotate-90 mx-auto w-4/5 md:w-[300px] md:h-[300px]" id="Layer_1" viewBox="0 0 512 512">
+                  <path d="m485.291 129.408-224-128a10.645 10.645 0 0 0-10.581 0l-224 128a10.665 10.665 0 0 0-5.376 9.259v234.667c0 3.819 2.048 7.36 5.376 9.259l224 128c1.643.939 3.456 1.408 5.291 1.408s3.648-.469 5.291-1.408l224-128a10.665 10.665 0 0 0 5.376-9.259V138.667a10.668 10.668 0 0 0-5.377-9.259z" fill="url(&quot;#SvgjsLinearGradient1060&quot;)"></path>
+                  <defs><linearGradient id="SvgjsLinearGradient1060"><stop stopColor="#059669" offset="0"></stop><stop stopColor="#059669" offset="1"></stop></linearGradient></defs>
+              </svg>
+              <div className="absolute max-w-[60%] left-[19%] md:left-[13%] md:max-w-[75%] z-20 top-0 text-center text-white max-h-[300px] pt-3 md:!pt-12 overflow-hidden">
+                  <h1 className="text-2xl mt-16 md:text-xl font-semibold text-emerald-400 dark:text-white md:my-2">
+                      Ready to Start Your <span className="text-emerald-200"> Project?</span>
+                  </h1>
+                  <p className="w-full md:text-sm text-md my-3 md:mt-6 line-clamp-3 md:line-clamp-none overflow-hidden">
+                      Get in touch today for a free consultation. Let's discuss how we can help grow your business.
+                  </p>
+              </div>
+          </div>
 
-        </section>
+          {/* <!-- Feature 5: Social Proof and Call to Action --> */}
+          <div className="relative w-full mt-6 md:w-auto md:mt-[141px] md:-ml-[68px]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="relative z-10 rotate-90 mx-auto w-4/5 md:w-[300px] md:h-[300px]" id="Layer_1" viewBox="0 0 512 512">
+                  <path d="m485.291 129.408-224-128a10.645 10.645 0 0 0-10.581 0l-224 128a10.665 10.665 0 0 0-5.376 9.259v234.667c0 3.819 2.048 7.36 5.376 9.259l224 128c1.643.939 3.456 1.408 5.291 1.408s3.648-.469 5.291-1.408l224-128a10.665 10.665 0 0 0 5.376-9.259V138.667a10.668 10.668 0 0 0-5.377-9.259z" fill="url(&quot;#SvgjsLinearGradient1060&quot;)"></path>
+                  <defs><linearGradient id="SvgjsLinearGradient1060"><stop stopColor="#059669" offset="0"></stop><stop stopColor="#059669" offset="1"></stop></linearGradient></defs>
+              </svg>
+              <div className="absolute max-w-[60%] left-[19%] md:left-[13%] md:max-w-[75%] z-20 top-0 text-center text-white max-h-[300px] pt-3 md:!pt-12 overflow-hidden">
+                  <h1 className="text-2xl mt-16 md:text-xl font-semibold text-emerald-400 dark:text-white md:my-2">
+                      Join Our <span className="text-emerald-200"> Partners</span> Worldwide
+                  </h1>
+                  <p className="w-full md:text-sm text-md my-3 md:mt-6 line-clamp-3 md:line-clamp-none overflow-hidden">
+                      Trusted by clients from various industries. Join our global community of successful businesses.
+                  </p>
+              </div>
+          </div>
+      </div>
+      <Review/>
 
     </>
   );
