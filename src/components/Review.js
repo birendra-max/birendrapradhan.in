@@ -60,7 +60,7 @@ const Review = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-12 rounded-lg shadow-lg hover:scale-100 transform transition-all duration-300 md:px-12 px-4"
+      className="py-12 rounded-lg hover:scale-100 transform transition-all duration-300 md:px-12 px-4"
     >
       <div className="text-center mb-12">
         <h2 className="text-3xl font-extrabold text-gray-800">
