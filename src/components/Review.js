@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,136 +6,105 @@ import {
   faSearch,
   faComments,
   faPalette,
+  faGlobeAmericas, // for Countries Covered
+  faTrophy, // for Designs Completed
 } from "@fortawesome/free-solid-svg-icons";
 
-const Review = () => {
-  const [projectsCompleted, setProjectsCompleted] = useState(0);
-  const [seoOptimized, setSeoOptimized] = useState(0);
-  const [clientReviews, setClientReviews] = useState(0);
-  const [designsCompleted, setDesignsCompleted] = useState(0);
-  const sectionRef = useRef(null);
+import gsap from "gsap";
 
+const Achievements = () => {
   useEffect(() => {
-    const countUp = (target, setState, duration = 5000) => {
-      const increment = target / (duration / 100);
-      const interval = setInterval(() => {
-        setState((prev) => {
-          if (prev < target) {
-            return Math.min(prev + increment, target);
-          }
-          clearInterval(interval);
-          return target;
-        });
-      }, 100);
-    };
+    function animateCounters() {
+      document.querySelectorAll(".counter").forEach(counter => {
+        let target = +counter.getAttribute("data-target");
+        let duration = 2; // Duration of count animation
 
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          countUp(150, setProjectsCompleted, 5000);
-          countUp(120, setSeoOptimized, 5000);
-          countUp(85, setClientReviews, 5000);
-          countUp(200, setDesignsCompleted, 5000);
+        function startCount() {
+          let count = { value: 0 };
 
-          observer.unobserve(entry.target);
+          gsap.to(count, {
+            value: target,
+            duration: duration,
+            ease: "power1.out",
+            onUpdate: function () {
+              counter.textContent = Math.floor(count.value) + "+";
+            },
+            onComplete: function () {
+              setTimeout(() => {
+                counter.textContent = "0+";
+                startCount(); // Restart after 1 sec
+              }, 1000);
+            }
+          });
         }
+
+        startCount(); // Start the animation loop
       });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5,
-    });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
     }
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    animateCounters(); // Initialize the counters animation
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-12 rounded-lg hover:scale-100 transform transition-all duration-300 md:px-12 px-4"
-    >
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-extrabold text-gray-800">
-          Project Achievements
-        </h2>
-        <p className="mt-2 text-lg text-gray-600">
-          Delivering excellence with every project.
-        </p>
-      </div>
+    <section className="py-24 px-6 md:px-12 rounded-xl text-white">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Left Side: Heading & Description */}
+        <div className="text-center md:text-left">
+          <h2 className="text-4xl font-bold mb-4 text-black">Project Achievements</h2>
+          <p className="text-lg text-black leading-relaxed max-w-lg mx-auto md:mx-0">
+            Delivering excellence in every project with innovation and creativity.
+          </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-6">
-        {/* Projects Completed */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center">
-            <FontAwesomeIcon icon={faClipboardCheck} className="w-10 h-10" />
-          </div>
-          <dt className="text-lg font-semibold text-gray-900 mt-4">
-            Projects Completed
-          </dt>
-          <dd className="mt-2 text-4xl font-bold text-gray-900">
-            {Math.floor(projectsCompleted)}
-          </dd>
+          {/* Call to Action */}
+          <Link
+            to="/contactus"
+            className="inline-block px-8 py-4 my-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
+          >
+            Let's Build Something Amazing Together!
+          </Link>
         </div>
 
-        {/* SEO Optimization in Projects */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="w-14 h-14 rounded-full bg-green-600 text-white flex items-center justify-center mb-4">
-            <FontAwesomeIcon icon={faSearch} className="w-10 h-10" />
+        {/* Right Side: Achievements List */}
+        <div className="grid grid-cols-2 gap-6 md:gap-8">
+          {/* Projects Completed */}
+          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
+            <div className="w-16 h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faClipboardCheck} className="w-14 h-14" />
+            </div>
+            <p className="text-lg text-gray-600">Projects Completed</p>
+            <p className="text-4xl font-bold text-indigo-600 counter" data-target="500">0+</p>
           </div>
-          <dt className="text-lg font-semibold text-gray-900">
-            SEO-Optimized Projects
-          </dt>
-          <dd className="mt-2 text-4xl font-bold text-gray-900">
-            {Math.floor(seoOptimized)}
-          </dd>
-        </div>
 
-        {/* Client Reviews */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="w-14 h-14 rounded-full bg-yellow-500 text-white flex items-center justify-center mb-4">
-            <FontAwesomeIcon icon={faComments} className="w-10 h-10" />
+          {/* SEO-Optimized Projects */}
+          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
+            <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faSearch} className="w-14 h-14" />
+            </div>
+            <p className="text-lg text-gray-600">SEO-Optimized Projects</p>
+            <p className="text-4xl font-bold text-indigo-600 counter" data-target="100">0+</p>
           </div>
-          <dt className="text-lg font-semibold text-gray-900">
-            Client Reviews
-          </dt>
-          <dd className="mt-2 text-4xl font-bold text-gray-900">
-            {Math.floor(clientReviews)}
-          </dd>
-        </div>
 
-        {/* Designs Completed */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="w-14 h-14 rounded-full bg-red-500 text-white flex items-center justify-center mb-4">
-            <FontAwesomeIcon icon={faPalette} className="w-10 h-10" />
+          {/* Designs Completed */}
+          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
+            <div className="w-16 h-16 rounded-full bg-yellow-500 text-white flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faTrophy} className="w-14 h-14" />
+            </div>
+            <p className="text-lg text-gray-600">Designs Completed</p>
+            <p className="text-4xl font-bold text-indigo-600 counter" data-target="100">0+</p>
           </div>
-          <dt className="text-lg font-semibold text-gray-900">
-            Designs Completed
-          </dt>
-          <dd className="mt-2 text-4xl font-bold text-gray-900">
-            {Math.floor(designsCompleted)}
-          </dd>
-        </div>
-      </div>
 
-      {/* Call to Action */}
-      <div className="mt-12 text-center">
-        <Link
-          to="/contactus"
-          className="inline-block px-6 py-3 bg-indigo-600 text-white text-lg font-medium rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300"
-        >
-          Let's Build Something Amazing Together!
-        </Link>
+          {/* Countries Covered */}
+          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
+            <div className="w-16 h-16 rounded-full bg-red-500 text-white flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faGlobeAmericas} className="w-16 h-16" />
+            </div>
+            <p className="text-lg text-gray-600">Countries Covered</p>
+            <p className="text-4xl font-bold text-indigo-600 counter" data-target="10">0+</p>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Review;
+export default Achievements;
