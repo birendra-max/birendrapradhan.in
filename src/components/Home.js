@@ -238,7 +238,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <section id="about" className="z-50 text-black md:px-18">
+      <section id="about" className="z-50 text-black mx-2 md:px-18">
         <div className="bg-white rounded-lg shadow-lg md:p-8 p-2 max-w-8xl mx-auto mt-12 transform transition-all duration-300 hover:scale-105">
           <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
             {/* About Me Image */}
@@ -251,7 +251,7 @@ export default function Home() {
             </div>
 
             {/* About Me Text */}
-            <div className="w-full md:w-2/3">
+            <div className="w-full md:w-2/3 p-2">
               <h2 className="text-3xl font-semibold mb-4">
                 <span className="border-b-4 border-yellow-700">About Me</span>
               </h2>
@@ -261,7 +261,7 @@ export default function Home() {
               <p className="text-lg leading-relaxed mb-6">
                 I'm always exploring new tools and frameworks to stay ahead in the tech world. I also have hands-on experience deploying applications to cloud platforms and servers, ensuring they run smoothly and efficiently in real-world environments.
               </p>
-              <p className="text-lg leading-relaxed mb-6">
+              <p className="text-lg leading-relaxed mb-2">
                 <b>
                   Beyond coding, I love learning, solving complex problems, and working with creative, driven teams.
                 </b>
@@ -282,7 +282,7 @@ export default function Home() {
       </section>
 
 
-      <section className="h-full m-auto py-12 md:px-18">
+      <section className="h-full m-auto py-18 mx-2 md:px-18">
         <div className="max-w-8xl m-auto md:px-0 px-2 md:my-10 bg-[#111111] dark:bg-white rounded-xl overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl">
           <section className="w-full h-full flex flex-col justify-center md:py-20 py-10 md:px-20">
             <div className="w-fit">

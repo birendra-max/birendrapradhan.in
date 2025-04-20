@@ -8,11 +8,11 @@ const Footer = () => {
             <div className="w-full bottom-0 bg-bergundy">
             <div className="h-fit w-[80%] mx-auto md:py-10 py-4 flex sm:flex-row flex-col justify-between items-center">
                 <div>
-                    <img src={logo} alt="Logo" className="md:w-32 md:h-32 w-12 h-12 rounded-full border-4 border-indigo-600 shadow-lg" />
+                    <img src={logo} alt="Logo" className="md:w-32 md:h-32 w-18 h-18 rounded-full border-4 border-indigo-600 shadow-lg" />
                 </div>
 
                 <div className="flex flex-col gap-4 items-center">
-                    <ul className="flex lg:gap-6 md:gap-4 md:flex-row flex-col justify-center md:text-xl text-lg md:mt-0 mt-4 md:font-semibold text-gray-300">
+                    <ul className="flex lg:gap-6 md:gap-4 md:flex-row flex-col justify-center items-center md:text-xl text-lg md:mt-0 mt-4 md:font-semibold text-gray-300">
                         <li className="">
                             <Link to="" className="text-gold">Privacy & Policy</Link>
                         </li>

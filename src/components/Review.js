@@ -46,64 +46,50 @@ const Achievements = () => {
   }, []);
 
   return (
-    <section className="py-24 px-6 md:px-18 rounded-xl text-white">
-      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="py-12 px-4 sm:px-6 md:px-18 lg:px-18 rounded-xl text-white">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
         {/* Left Side: Heading & Description */}
         <div className="text-center md:text-left">
-          <h2 className="text-4xl font-bold mb-4 text-black">Project Achievements</h2>
-          <p className="text-lg text-black leading-relaxed  mx-auto md:mx-0">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">
+            Project Achievements
+          </h2>
+          <p className="text-base sm:text-lg text-black leading-relaxed max-w-md mx-auto md:mx-0">
             Delivering excellence in every project with innovation and creativity.
           </p>
 
           {/* Call to Action */}
           <Link
             to="/contactus"
-            className="inline-block px-8 py-4 my-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 my-6 bg-indigo-600 text-white text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
           >
             Let's Build Something Amazing Together!
           </Link>
         </div>
 
         {/* Right Side: Achievements List */}
-        <div className="grid grid-cols-2 gap-6 md:gap-8">
-          {/* Projects Completed */}
-          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
-            <div className="w-16 h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center mb-4">
-              <FontAwesomeIcon icon={faClipboardCheck} className="w-14 h-14" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+          {/* Achievement Item */}
+          {[
+            { icon: faClipboardCheck, label: "Projects Completed", count: 500, color: "indigo" },
+            { icon: faSearch, label: "SEO-Optimized Projects", count: 100, color: "green" },
+            { icon: faTrophy, label: "Designs Completed", count: 100, color: "yellow" },
+            { icon: faGlobeAmericas, label: "Countries Covered", count: 10, color: "red" },
+          ].map(({ icon, label, count, color }, index) => (
+            <div
+              key={index}
+              className="achievement-item bg-white p-5 sm:p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300"
+            >
+              <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-${color}-600 text-white flex items-center justify-center mb-4`}>
+                <FontAwesomeIcon icon={icon} className="w-6 h-6 sm:w-8 sm:h-8" />
+              </div>
+              <p className="text-base sm:text-lg text-gray-600">{label}</p>
+              <p className="text-3xl sm:text-4xl font-bold text-indigo-600 counter" data-target={count}>0+</p>
             </div>
-            <p className="text-lg text-gray-600">Projects Completed</p>
-            <p className="text-4xl font-bold text-indigo-600 counter" data-target="500">0+</p>
-          </div>
-
-          {/* SEO-Optimized Projects */}
-          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
-            <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mb-4">
-              <FontAwesomeIcon icon={faSearch} className="w-14 h-14" />
-            </div>
-            <p className="text-lg text-gray-600">SEO-Optimized Projects</p>
-            <p className="text-4xl font-bold text-indigo-600 counter" data-target="100">0+</p>
-          </div>
-
-          {/* Designs Completed */}
-          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
-            <div className="w-16 h-16 rounded-full bg-yellow-500 text-white flex items-center justify-center mb-4">
-              <FontAwesomeIcon icon={faTrophy} className="w-14 h-14" />
-            </div>
-            <p className="text-lg text-gray-600">Designs Completed</p>
-            <p className="text-4xl font-bold text-indigo-600 counter" data-target="100">0+</p>
-          </div>
-
-          {/* Countries Covered */}
-          <div className="achievement-item bg-white p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300">
-            <div className="w-16 h-16 rounded-full bg-red-500 text-white flex items-center justify-center mb-4">
-              <FontAwesomeIcon icon={faGlobeAmericas} className="w-16 h-16" />
-            </div>
-            <p className="text-lg text-gray-600">Countries Covered</p>
-            <p className="text-4xl font-bold text-indigo-600 counter" data-target="10">0+</p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
+
   );
 };
 
