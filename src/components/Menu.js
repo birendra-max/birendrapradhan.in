@@ -1,11 +1,7 @@
 import { useState } from "react";
 import logo from './img/logo.png';
-import Home from './Home';
-import About from './About';
-import Services from './Services';
-import ContactUs from './ContactUs';
-import Blogs from './Blogs';
-import { Link, BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+
+import { Link, useLocation } from 'react-router-dom';
 
 function Menu() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,19 +129,4 @@ function Menu() {
     );
 }
 
-function App() {
-    return (
-        <BrowserRouter>
-            <Menu />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/contactus" element={<ContactUs />} />
-                <Route path="/blog" element={<Blogs />} />
-            </Routes>
-        </BrowserRouter>
-    );
-}
-
-export default App;
+export default Menu;

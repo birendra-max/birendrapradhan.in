@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClipboardCheck,
   faSearch,
-  faComments,
-  faPalette,
   faGlobeAmericas, // for Countries Covered
   faTrophy, // for Designs Completed
 } from "@fortawesome/free-solid-svg-icons";
