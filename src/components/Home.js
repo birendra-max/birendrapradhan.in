@@ -64,7 +64,7 @@ export default function Home() {
               <h4 className="text-lg sm:text-xl font-medium text-gray-300 bg-blue-900/50 px-4 py-2 rounded-lg inline-block">
                 Hello, I am{" "}
                 <span className="text-green-400 font-semibold text-2xl">
-                  Birendra Pradhan 👋 ,
+                  Birendra Kumar Pradhan 👋 ,
                 </span>
               </h4>
 
