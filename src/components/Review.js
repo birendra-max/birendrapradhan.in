@@ -46,12 +46,12 @@ const Achievements = () => {
   }, []);
 
   return (
-    <section className="py-24 px-6 md:px-12 rounded-xl text-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="py-24 px-6 md:px-18 rounded-xl text-white">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side: Heading & Description */}
         <div className="text-center md:text-left">
           <h2 className="text-4xl font-bold mb-4 text-black">Project Achievements</h2>
-          <p className="text-lg text-black leading-relaxed max-w-lg mx-auto md:mx-0">
+          <p className="text-lg text-black leading-relaxed  mx-auto md:mx-0">
             Delivering excellence in every project with innovation and creativity.
           </p>
 

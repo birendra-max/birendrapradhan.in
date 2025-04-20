@@ -49,7 +49,7 @@ const Clientreview = () => {
         </p>
 
         {/* Client Testimonials Slider */}
-        <div id="client-carousel" className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-lg bg-white shadow-2xl">
+        <div id="client-carousel" className="relative w-full max-w-8xl mx-auto overflow-hidden rounded-lg bg-white shadow-2xl">
           <div className="carousel-inner flex transition-all duration-700 ease-in-out" style={{ transform: `translateX(-${100 * currentIndex}%)` }}>
             {clients.map((client, index) => (
               <div key={index} className="carousel-item flex-shrink-0 w-full px-6 py-8 text-center">

@@ -23,16 +23,16 @@ function Menu() {
 
                 {/* Middle Section: Navigation Links */}
                 <div className="hidden md:flex items-center space-x-12">
-                    <Link to="/" className={`text-md font-semibold ${location.pathname === "/" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
+                    <Link to="/" className={`text-lg font-semibold ${location.pathname === "/" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
                         Home
                     </Link>
-                    <Link to="/about" className={`text-md font-semibold ${location.pathname === "/about" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
+                    <Link to="/about" className={`text-lg font-semibold ${location.pathname === "/about" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
                         Explore Me
                     </Link>
-                    <Link to="/services" className={`text-md font-semibold ${location.pathname === "/services" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
+                    <Link to="/services" className={`text-lg font-semibold ${location.pathname === "/services" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
                         Get Our Services
                     </Link>
-                    <Link to="/blog" className={`text-md font-semibold ${location.pathname === "/blog" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
+                    <Link to="/blog" className={`text-lg font-semibold ${location.pathname === "/blog" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
                         Blogs
                     </Link>
                 </div>
