@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <>
       <section id="hero">
-        <div className="w-full relative py-10 md:px-8 shadow-xl md:h-[75vh]">
+        <div className="w-full relative md:py-10 md:px-8 shadow-xl md:h-[75vh]">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
