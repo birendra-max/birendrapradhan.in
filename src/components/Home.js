@@ -42,93 +42,87 @@ export default function Home() {
 
   return (
     <>
-      <section id="hero">
-        <div className="w-full relative md:py-10 md:px-8 shadow-xl md:h-[75vh]">
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1607798748738-b15c40d33d57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8Y29kZXxlbnwwfDB8fHwxNzMyNzk1MjA5fDA&ixlib=rb-4.0.3&q=80&w=1080')",
-            }}
-          />
-          {/* Content */}
-          <div className="relative z-10 flex flex-col justify-center items-center h-full md:h-[80%] px-6 sm:px-12 md:px-16 text-center sm:text-left py-10 md:bg-gray-900/50  bg-gray-900/50">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-full"
-            >
-              {/* Introduction */}
-              <h4 className="text-lg sm:text-xl font-medium text-gray-300 bg-blue-900/50 px-4 py-2 rounded-lg inline-block">
-                Hello, I am{" "}
-                <span className="text-green-400 font-semibold text-2xl">
-                  Birendra Kumar Pradhan 👋 ,
-                </span>
-              </h4>
+      <section id="hero" className="relative w-full min-h-[60vh] bg-gray-900 text-white overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-80"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1607798748738-b15c40d33d57?auto=format&fit=crop&w=1920&q=80')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
 
-              {/* Typing Effect */}
-              <h1 className="mt-6 text-3xl sm:text-5xl font-bold text-white leading-tight">
-                I'm{" "}
-                <span className="text-green-400">
-                  <ReactTyped
-                    strings={[
-                      "FullStack Web Developer,",
-                      "Frontend Developer,",
-                      "Backend Developer,",
-                      "React Js Developer,",
-                      "WordPress Developer,",
-                      "Freelancer .",
-                    ]}
-                    typeSpeed={100}
-                    backSpeed={60}
-                    loop
-                  />
-                </span>
-              </h1>
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-start justify-center h-full px-6 py-16 sm:px-12 md:px-24">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl"
+          >
+            {/* Intro */}
+            <h2 className="text-xl md:text-2xl font-light text-gray-200 mb-2">
+              Hi, I’m
+              <span className="ml-2 text-green-400 font-bold text-2xl md:text-3xl">
+                Birendra Kumar Pradhan 👋
+              </span>
+            </h2>
 
-              {/* About Me */}
-              <p className="mt-4 text-sm sm:text-lg text-gray-200 opacity-90 leading-relaxed">
-                Passionate full-stack developer with{" "}
-                <strong>2 years of experience</strong> building modern web
-                applications. I specialize in{" "}
-                <strong>PHP, MySQL, and CodeIgniter</strong>, with strong
-                expertise in{" "}
-                <strong>
-                  React.js, Tailwind CSS, Bootstrap, and JavaScript
-                </strong>
-                . My mission is to create{" "}
-                <strong>high-performance, scalable, and user-friendly</strong>
-                digital experiences.
-              </p>
+            {/* Typing Title */}
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mt-2">
+              I’m a{" "}
+              <span className="text-green-400">
+                <ReactTyped
+                  strings={[
+                    "FullStack Web Developer.",
+                    "React JS Developer.",
+                    "WordPress Expert.",
+                    "Backend Developer.",
+                    "Freelancer.",
+                  ]}
+                  typeSpeed={80}
+                  backSpeed={50}
+                  loop
+                />
+              </span>
+            </h1>
 
-              {/* CTA Buttons with Hover Effects */}
-              <div className="mt-8 flex flex-wrap justify-center sm:justify-start gap-4 text-sm">
-                <Link to="/About">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 text-white font-semibold rounded-sm bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 transition-all duration-300 shadow-xl transform cursor-pointer"
-                  >
-                    Explore Me
-                  </motion.button>
-                </Link>
+            {/* Summary */}
+            <p className="mt-6 text-md md:text-lg text-gray-300 leading-relaxed">
+              I’m a passionate developer with <strong>2 years of experience</strong>
+              building fast, scalable, and user-friendly web solutions. My stack
+              includes <strong>PHP, CodeIgniter, MySQL</strong> on the backend, and{" "}
+              <strong>React, Tailwind, Bootstrap</strong> on the frontend. Let’s bring your
+              ideas to life with clean, efficient code.
+            </p>
 
-                <Link to="/Services">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 text-white font-semibold rounded-sm bg-gradient-to-r from-purple-500 to-pink-600 hover:from-pink-600 hover:to-purple-500 transition-all duration-300 shadow-xl transform cursor-pointer"
-                  >
-                    Get Our Services
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
+            {/* Buttons */}
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link to="/About">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 rounded-md bg-green-500 hover:bg-green-600 text-white font-semibold shadow-lg transition"
+                >
+                  Explore Me
+                </motion.button>
+              </Link>
+
+              <Link to="/Services">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 rounded-md border border-white text-white font-medium hover:bg-white hover:text-gray-900 transition"
+                >
+                  Get My Services
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
+
 
       <motion.section
         initial={{ opacity: 0, y: 50 }}
@@ -238,178 +232,105 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <section id="about" className="z-50 text-black mx-2 md:px-18">
-        <div className="bg-white rounded-lg shadow-lg md:p-8 p-2 max-w-8xl mx-auto mt-12 transform transition-all duration-300 hover:scale-105">
-          <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
-            {/* About Me Image */}
-            <div className="w-full md:w-1/3">
-              <img
-                src="https://images.unsplash.com/photo-1607798748738-b15c40d33d57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8Y29kZXxlbnwwfDB8fHwxNzMyNzk1MjA5fDA&ixlib=rb-4.0.3&q=80&w=1080" // Replace with your image URL
-                alt="About Me"
-                className="w-full h-full rounded-full object-cover shadow-lg border-4 border-indigo-600"
-              />
+      {/* === ABOUT ME SECTION === */}
+      <section id="about" className="relative bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+        <div className="absolute inset-y-0 left-0 w-1 bg-indigo-600 rounded-r-lg hidden sm:block"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 sm:gap-16">
+          {/* Text Content */}
+          <div className="w-full lg:w-2/3">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
+              Hello, I’m <span className="text-indigo-600">Birendra</span><br />
+              A Passionate Full Stack Developer
+            </h2>
+
+            <p className="text-gray-600 text-base sm:text-lg mb-4 leading-relaxed">
+              With <span className="font-semibold text-indigo-600">2+ years of experience</span>, I build high-performance websites & apps using modern technologies.
+            </p>
+            <p className="text-gray-600 text-base sm:text-lg mb-4 leading-relaxed">
+              From <span className="text-indigo-600 font-medium">React, PHP, MySQL</span> to deployment on <span className="text-indigo-600 font-medium">AWS & Docker</span>, I deliver full-stack solutions.
+            </p>
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
+              Let’s collaborate and bring your next idea to life with elegant UI and clean code.
+            </p>
+
+            {/* Tech Stack Tags */}
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
+              {["React.js", "PHP", "MySQL", "Docker", "AWS"].map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-gray-100 px-3 py-1.5 rounded-full text-sm text-gray-700 font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
 
-            {/* About Me Text */}
-            <div className="w-full md:w-2/3 p-2">
-              <h2 className="text-3xl font-semibold mb-4">
-                <span className="border-b-4 border-yellow-700">About Me</span>
-              </h2>
-              <p className="text-lg leading-relaxed mb-6">
-                👋 Hi there! I'm a passionate full-stack web developer who builds responsive, interactive, and high-performance web applications. I specialize in both frontend and backend technologies, creating solutions that are functional, user-friendly, and visually appealing.
-              </p>
-              <p className="text-lg leading-relaxed mb-6">
-                I'm always exploring new tools and frameworks to stay ahead in the tech world. I also have hands-on experience deploying applications to cloud platforms and servers, ensuring they run smoothly and efficiently in real-world environments.
-              </p>
-              <p className="text-lg leading-relaxed mb-2">
-                <b>
-                  Beyond coding, I love learning, solving complex problems, and working with creative, driven teams.
-                </b>
-              </p>
+            <a
+              href="/About"
+              className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-sm sm:text-md font-semibold px-5 py-3 rounded-xl shadow-md transition duration-300"
+            >
+              Know More About Me
+            </a>
+          </div>
 
-              <Link to="/About">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 text-white font-semibold rounded-sm bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 transition-all duration-300 shadow-xl transform cursor-pointer mt-8"
-                >
-                  Explore Me
-                </motion.button>
-              </Link>
+          {/* Profile Image */}
+          <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
+            <div className="relative group w-72 h-72 sm:w-82 sm:h-82">
+              <img
+                src="https://images.unsplash.com/photo-1607798748738-b15c40d33d57?auto=format&fit=crop&w=800&q=80"
+                alt="Birendra Kumar Pradhan"
+                className="w-full h-full object-cover rounded-2xl border-4 border-indigo-600 shadow-2xl group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute -top-4 -left-4 w-full h-full border-4 border-dashed border-gray-200 rounded-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* === SERVICES SECTION === */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-white to-gray-100 dark:from-[#111111] dark:to-gray-900 mt-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+              💼 What I Do
+            </h2>
+            <div className="mx-auto mt-2 h-1 w-20 sm:w-24 bg-green-500 rounded-full"></div>
+          </div>
 
-      <section className="h-full m-auto py-18 mx-2 md:px-18">
-        <div className="max-w-8xl m-auto md:px-0 px-2 md:my-10 bg-[#111111] dark:bg-white rounded-xl overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl">
-          <section className="w-full h-full flex flex-col justify-center md:py-20 py-10 md:px-20">
-            <div className="w-fit">
-              <h2 className="text-2xl font-bold text-white dark:text-black pb-2">
-                What I Do
-              </h2>
-              <div className="rounded-t-full border-[1px] border-gray-500 dark:border-gray-400 overflow-hidden">
-                <hr className="border-[3px] border-green-400 dark:border-green-600 w-[20%]" />
-              </div>
-            </div>
-
-            <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-4 mt-8">
-              {/* Web Development */}
+          {/* Grid */}
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {[
+              { title: "Web Development", icon: "fa-code", desc: "Responsive websites using modern tools." },
+              { title: "UI/UX Design", icon: "fa-laptop-code", desc: "Clean, usable interfaces that convert." },
+              { title: "SEO Solutions", icon: "fa-search", desc: "Optimized for visibility and traffic." },
+              { title: "WordPress Dev", icon: "fab fa-wordpress", desc: "Custom themes & plugins." },
+              { title: "E-commerce", icon: "fa-shopping-bag", desc: "Fast, secure online stores." },
+              { title: "API Integration", icon: "fa-plug", desc: "Enhancing your site with powerful APIs." },
+            ].map((service, idx) => (
               <Link
                 to="/"
-                className="flex sm:gap-4 gap-1 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white"
+                key={idx}
+                className="group flex items-start gap-4 sm:gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-5 sm:p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 ease-in-out shadow-sm hover:shadow-lg"
               >
-                <span>
-                  <i className="fa fa-code text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
-                </span>
-
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold text-white dark:text-black">
-                    Web Development
+                <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-green-500/10 dark:bg-green-500/20 rounded-xl flex items-center justify-center">
+                  <i className={`fa ${service.icon} text-xl sm:text-2xl text-green-600 dark:text-green-400`}></i>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white">
+                    {service.title}
                   </h3>
-                  <p className="text-gray-400 dark:text-gray-700">
-                    I build responsive and easy-to-use websites that fit your needs, using the latest technology.
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    {service.desc}
                   </p>
                 </div>
               </Link>
-
-              {/* UI/UX Design */}
-              <Link
-                to="/"
-                className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white"
-              >
-                <span>
-                  <i className="fa fa-laptop-code text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
-                </span>
-
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold text-white dark:text-black">
-                    UI/UX Design
-                  </h3>
-                  <p className="text-gray-400 dark:text-gray-700">
-                    I design websites that look great and are easy for people to use, helping improve their experience and keep them engaged.
-                  </p>
-                </div>
-              </Link>
-
-              {/* SEO Solutions */}
-              <Link
-                to="/"
-                className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white"
-              >
-                <span>
-                  <i className="fa fa-search text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
-                </span>
-
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold text-white dark:text-black">
-                    SEO Solutions
-                  </h3>
-                  <p className="text-gray-400 dark:text-gray-700">
-                    I improve websites so they show up better on search engines and get more visitors naturally.
-                  </p>
-                </div>
-              </Link>
-
-              {/* WordPress Site Development */}
-              <Link
-                to="/"
-                className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white"
-              >
-                <span>
-                  <i className="fab fa-wordpress text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
-                </span>
-
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold text-white dark:text-black">
-                    WordPress Site Development
-                  </h3>
-                  <p className="text-gray-400 dark:text-gray-700">
-                    I build responsive WordPress websites, including custom themes and plugins.
-                  </p>
-                </div>
-              </Link>
-
-              {/* E-commerce Development */}
-              <Link
-                to="/"
-                className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white"
-              >
-                <span>
-                  <i className="fa fa-shopping-bag text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
-                </span>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold text-white dark:text-black">
-                    E-commerce Development
-                  </h3>
-                  <p className="text-gray-400 dark:text-gray-700">
-                    I develop powerful platforms that boost your online presence and support your business growth.
-                  </p>
-                </div>
-              </Link>
-
-              {/* API Integration */}
-              <Link
-                to="/"
-                className="flex sm:gap-4 gap-2 transition-transform transform hover:scale-105 duration-300 ease-in-out hover:shadow-xl hover:bg-blue-300 rounded-xl p-6 hover:text-white"
-              >
-                <span>
-                  <i className="fa fa-plug text-2xl sm:text-3xl text-green-400 dark:text-green-600"></i>
-                </span>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold text-white dark:text-black">
-                    API Integration
-                  </h3>
-                  <p className="text-gray-400 dark:text-gray-700">
-                    I integrate systems smoothly to improve how your website functions and performs.
-                  </p>
-                </div>
-              </Link>
-            </div>
-          </section>
+            ))}
+          </div>
         </div>
       </section>
+
 
       <Review />
 

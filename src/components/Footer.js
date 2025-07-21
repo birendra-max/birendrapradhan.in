@@ -1,10 +1,9 @@
-import React from 'react';
 import logo from './img/logo.png';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-        <div className=" dark:bg-gray-950">
+        <div className="dark:bg-gray-950">
             <div className="w-full bottom-0 bg-bergundy">
             <div className="h-fit w-[80%] mx-auto md:py-10 py-4 flex sm:flex-row flex-col justify-between items-center">
                 <div>

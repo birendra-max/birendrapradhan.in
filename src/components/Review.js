@@ -4,90 +4,88 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClipboardCheck,
   faSearch,
-  faGlobeAmericas, // for Countries Covered
-  faTrophy, // for Designs Completed
+  faGlobeAmericas,
+  faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
 
 import gsap from "gsap";
 
 const Achievements = () => {
   useEffect(() => {
-    function animateCounters() {
+    const animateCounters = () => {
       document.querySelectorAll(".counter").forEach(counter => {
-        let target = +counter.getAttribute("data-target");
-        let duration = 2; // Duration of count animation
+        const target = +counter.getAttribute("data-target");
+        const duration = 2;
 
-        function startCount() {
-          let count = { value: 0 };
+        const startCount = () => {
+          const count = { value: 0 };
 
           gsap.to(count, {
             value: target,
             duration: duration,
             ease: "power1.out",
-            onUpdate: function () {
+            onUpdate: () => {
               counter.textContent = Math.floor(count.value) + "+";
             },
-            onComplete: function () {
+            onComplete: () => {
               setTimeout(() => {
                 counter.textContent = "0+";
-                startCount(); // Restart after 1 sec
+                startCount();
               }, 1000);
             }
           });
-        }
+        };
 
-        startCount(); // Start the animation loop
+        startCount();
       });
-    }
+    };
 
-    animateCounters(); // Initialize the counters animation
+    animateCounters();
   }, []);
 
-  return (
-    <section className="py-12 px-4 sm:px-6 md:px-18 lg:px-18 rounded-xl text-white">
-      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-        {/* Left Side: Heading & Description */}
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">
-            Project Achievements
-          </h2>
-          <p className="text-base sm:text-lg text-black leading-relaxed max-w-md mx-auto md:mx-0">
-            Delivering excellence in every project with innovation and creativity.
-          </p>
+  const achievements = [
+    { icon: faClipboardCheck, label: "Projects Completed", count: 500, color: "bg-indigo-600" },
+    { icon: faSearch, label: "SEO-Optimized Projects", count: 100, color: "bg-green-600" },
+    { icon: faTrophy, label: "Designs Completed", count: 100, color: "bg-yellow-500" },
+    { icon: faGlobeAmericas, label: "Countries Covered", count: 10, color: "bg-red-500" },
+  ];
 
-          {/* Call to Action */}
+  return (
+    <section className="py-16 px-6 bg-gradient-to-br from-white to-gray-100 mt-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+        {/* Left Side */}
+        <div className="text-center md:text-left">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-5">
+            🚀 Project Achievements
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-md mx-auto md:mx-0">
+            I’ve delivered high-impact solutions with a focus on quality, speed, and client satisfaction. Here's a quick glimpse of my accomplishments.
+          </p>
           <Link
             to="/contactus"
-            className="inline-block px-6 sm:px-8 py-3 sm:py-4 my-6 bg-indigo-600 text-white text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
+            className="inline-block mt-8 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold rounded-xl shadow-md transition transform hover:scale-105"
           >
-            Let's Build Something Amazing Together!
+            Let’s Work Together
           </Link>
         </div>
 
-        {/* Right Side: Achievements List */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-          {/* Achievement Item */}
-          {[
-            { icon: faClipboardCheck, label: "Projects Completed", count: 500, color: "indigo" },
-            { icon: faSearch, label: "SEO-Optimized Projects", count: 100, color: "green" },
-            { icon: faTrophy, label: "Designs Completed", count: 100, color: "yellow" },
-            { icon: faGlobeAmericas, label: "Countries Covered", count: 10, color: "red" },
-          ].map(({ icon, label, count, color }, index) => (
+        {/* Right Side: Achievements */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {achievements.map(({ icon, label, count, color }, index) => (
             <div
               key={index}
-              className="achievement-item bg-white p-5 sm:p-6 shadow-md rounded-lg text-center hover:scale-105 transform transition-all duration-300"
+              className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 text-center hover:shadow-xl transition-transform transform hover:scale-105"
             >
-              <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-${color}-600 text-white flex items-center justify-center mb-4`}>
-                <FontAwesomeIcon icon={icon} className="w-6 h-6 sm:w-8 sm:h-8" />
+              <div className={`w-16 h-16 mx-auto rounded-full ${color} text-white flex items-center justify-center shadow-md mb-4`}>
+                <FontAwesomeIcon icon={icon} className="text-2xl" />
               </div>
-              <p className="text-base sm:text-lg text-gray-600">{label}</p>
-              <p className="text-3xl sm:text-4xl font-bold text-indigo-600 counter" data-target={count}>0+</p>
+              <p className="text-gray-700 text-lg font-medium mb-1">{label}</p>
+              <p className="text-4xl font-extrabold text-indigo-600 counter" data-target={count}>0+</p>
             </div>
           ))}
         </div>
       </div>
     </section>
-
   );
 };
 
