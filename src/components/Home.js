@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Review from "./Review";
 import Clientreview from "./Clientreview";
 import Footer from "./Footer";
+import ContactUs from "./ContactUs";
 
 export default function Home() {
   const counters = document.querySelectorAll("[data-count]");
@@ -105,7 +106,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 rounded-md bg-green-500 hover:bg-green-600 text-white font-semibold shadow-lg transition"
                 >
-                  Explore Me
+                  Hire Me
                 </motion.button>
               </Link>
 
@@ -266,12 +267,13 @@ export default function Home() {
               ))}
             </div>
 
-            <a
-              href="/About"
+
+            <Link
+              to="/About"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-sm sm:text-md font-semibold px-5 py-3 rounded-xl shadow-md transition duration-300"
             >
               Know More About Me
-            </a>
+            </Link>
           </div>
 
           {/* Profile Image */}
@@ -288,55 +290,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* === SERVICES SECTION === */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-white to-gray-100 dark:from-[#111111] dark:to-gray-900 mt-10">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
+          {/* Section Header */}
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               💼 What I Do
             </h2>
-            <div className="mx-auto mt-2 h-1 w-20 sm:w-24 bg-green-500 rounded-full"></div>
+            <div className="mx-auto mt-2 h-1 w-24 bg-green-500 rounded-full"></div>
           </div>
 
-          {/* Grid */}
-          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
-            {[
-              { title: "Web Development", icon: "fa-code", desc: "Responsive websites using modern tools." },
-              { title: "UI/UX Design", icon: "fa-laptop-code", desc: "Clean, usable interfaces that convert." },
-              { title: "SEO Solutions", icon: "fa-search", desc: "Optimized for visibility and traffic." },
-              { title: "WordPress Dev", icon: "fab fa-wordpress", desc: "Custom themes & plugins." },
-              { title: "E-commerce", icon: "fa-shopping-bag", desc: "Fast, secure online stores." },
-              { title: "API Integration", icon: "fa-plug", desc: "Enhancing your site with powerful APIs." },
-            ].map((service, idx) => (
-              <Link
-                to="/"
-                key={idx}
-                className="group flex items-start gap-4 sm:gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-5 sm:p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 ease-in-out shadow-sm hover:shadow-lg"
-              >
-                <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-green-500/10 dark:bg-green-500/20 rounded-xl flex items-center justify-center">
-                  <i className={`fa ${service.icon} text-xl sm:text-2xl text-green-600 dark:text-green-400`}></i>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm">
-                    {service.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
+          {/* Services Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Individual Service Cards */}
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fas fa-code text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Web Development</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Responsive websites using React, PHP, and more.</p>
+              </div>
+            </div>
+
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fas fa-laptop-code text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">UI/UX Design</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Clean, usable interfaces for great user experience.</p>
+              </div>
+            </div>
+
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fas fa-search text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">SEO Solutions</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Make your website rank better on search engines.</p>
+              </div>
+            </div>
+
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fab fa-wordpress text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">WordPress Dev</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Custom WordPress themes & plugin development.</p>
+              </div>
+            </div>
+
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fas fa-plug text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">3rd-Party Integration</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Integrate Twilio, Stripe, Firebase, and more.</p>
+              </div>
+            </div>
+
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fab fa-aws text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">AWS Portal Setup</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Configure EC2, S3, RDS, Route53, and IAM roles.</p>
+              </div>
+            </div>
+
+            <div className="group flex items-start gap-5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:bg-blue-100/20 dark:hover:bg-blue-800/10 transition-all duration-300 shadow-sm hover:shadow-lg">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-800/30 rounded-xl flex items-center justify-center">
+                <i className="fas fa-server text-2xl text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">AWS Services</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Deployment, scaling, security & automation on AWS.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
 
       <Review />
 
       <Clientreview />
 
-      <Footer />
+     <section className="mt-10">
+       <ContactUs />
+     </section>
+
     </>
   );
 }

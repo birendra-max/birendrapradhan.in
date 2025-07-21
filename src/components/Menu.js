@@ -23,13 +23,13 @@ function Menu() {
                         Home
                     </Link>
                     <Link to="/about" className={`text-lg font-semibold ${location.pathname === "/about" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
-                        Explore Me
+                        About
                     </Link>
                     <Link to="/services" className={`text-lg font-semibold ${location.pathname === "/services" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
-                        Get Our Services
+                        Services
                     </Link>
-                    <Link to="/blog" className={`text-lg font-semibold ${location.pathname === "/blog" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
-                        Blogs
+                    <Link to="/projects" className={`text-lg font-semibold ${location.pathname === "/blog" ? "text-[#1abc9c]" : "text-white"} hover:text-[#1abc9c] transition duration-300`}>
+                        Projects
                     </Link>
                 </div>
 
@@ -104,8 +104,8 @@ function Menu() {
                         <Link to="/services" className="text-xl font-semibold text-white hover:text-[#1abc9c] transition duration-300">
                             Services
                         </Link>
-                        <Link to="/blog" className="text-xl font-semibold text-white hover:text-[#1abc9c] transition duration-300">
-                            Blog
+                        <Link to="/projects" className="text-xl font-semibold text-white hover:text-[#1abc9c] transition duration-300">
+                            Projects
                         </Link>
 
                         <Link to="/contactus">

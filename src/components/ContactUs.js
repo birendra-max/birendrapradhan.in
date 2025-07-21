@@ -1,4 +1,5 @@
-import Footer from './Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactUs() {
   function handleClick(e) {
@@ -96,18 +97,21 @@ export default function ContactUs() {
 
               <div className="mt-8 w-full bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-5">
                 <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                  <i className="uil uil-location-point text-blue-600 text-xl" />
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="text-blue-600 text-xl" />
                   <span>BTM Layout, Bengaluru, India 560076</span>
                 </div>
+
                 <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                  <i className="uil uil-phone text-blue-600 text-xl" />
+                  <FontAwesomeIcon icon={faPhoneAlt} className="text-blue-600 text-xl" />
                   <span>+91 9692926869</span>
                 </div>
+
                 <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                  <i className="uil uil-envelope text-blue-600 text-xl" />
+                  <FontAwesomeIcon icon={faEnvelope} className="text-blue-600 text-xl" />
                   <span>birendrapradhan112@gmail.com</span>
                 </div>
               </div>
+
 
               <div className="mt-6 flex gap-4">
                 <a href="#" className="text-gray-500 hover:text-blue-600 transition">
@@ -124,8 +128,6 @@ export default function ContactUs() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

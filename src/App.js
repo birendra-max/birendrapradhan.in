@@ -7,7 +7,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import ContactUs from './components/ContactUs';
-import Blogs from './components/Blogs';
+import Blogs from './components/Projects';
+import Footer from "./components/Footer";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -30,14 +31,15 @@ export default function App() {
         <>
           <Topbar />
           <BrowserRouter>
-          <Menu />
+            <Menu />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contactus" element={<ContactUs />} />
-              <Route path="/blog" element={<Blogs />} />
+              <Route path="/projects" element={<Blogs />} />
             </Routes>
+            <Footer />
           </BrowserRouter>
         </>
       )}
